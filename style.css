@@ -50,8 +50,14 @@ body
     transition: transform 0.5s linear;
 }
 
+.main.show-nav .circulo
+{
+    transform: rotate(-70deg);/*PARA POSICIONAR O CLOSE BUTTON*/
+}
+
 .circulo button 
 {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -78,6 +84,12 @@ body
     transform-origin: top left;
 }
 
+.main.show-nav + nav li 
+{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
 nav 
 {
     position: fixed;
@@ -97,14 +109,24 @@ nav ul li
     text-transform: uppercase;
     color: white;
     margin: 40px 0;
-    /*transform: translateX(-100%);*/
+    transform: translateX(-100%);
     transition: transform 0.4s ease-in;
 }
-
+/*a lista fica com um efeito escada, angulo 45º +/-*/
 nav ul li i 
 {
     font-size: 20px;
     margin-right: 10px;
+}
+nav ul li + li 
+{
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+nav ul li + li +li
+{
+    margin-left: 30px;
+    transform: translateX(-200%);
 }
 
 .conteudo img
